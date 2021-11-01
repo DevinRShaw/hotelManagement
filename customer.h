@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 // this class represents the customer 
-
 class customer {
   //cannot be accessed outside class 
   private:
@@ -17,11 +16,11 @@ class customer {
 
     //methods are the functions the class uses
 
-    void displayGuest(){
+    void displayCustomer(){
       std::cout << name << "\n";
       std::cout << numBeds << " beds\n";
       std::cout << numNights << " nights\n";
-      std::cout << "Date of check in " << checkInDate;
+      std::cout << "Date of check in " << checkInDate << "\n";
     }
 
     //constructor to minimize code, method that is executed to get attributes when we create new object
@@ -39,7 +38,7 @@ std::string nameIn;
 int numBedsIn;
 int numNightsIn;
 std::string checkInDateIn;
-int guestNum = 0;
+std::string guestId;
 
 void inputGuest(){
   std::cout << "Input guest information\n";
@@ -51,8 +50,9 @@ void inputGuest(){
   std::cin >> numNightsIn;
   std::cout <<  "Check in date: ";
   std::cin >> checkInDateIn;
-  guestNum++;
-  customer guestNum = customer (nameIn,  numBedsIn,  numNightsIn,checkInDateIn);
+  std::cout << "Guest ID: ";
+  std::cin >> guestId;
+  customer guestId = customer (nameIn,  numBedsIn, numNightsIn, checkInDateIn);
 }
 
     
