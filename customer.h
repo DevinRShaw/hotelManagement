@@ -1,58 +1,64 @@
 #include <iostream>
 #include <string>
+#pragma once
+
 // this class represents the customer 
 class customer {
+
   //cannot be accessed outside class 
   private:
     //attributes are the variables the class uses
     std::string name;
-    int numNights;
-    int numBeds;
     std::string checkInDate;
+    int numNights;
+    int roomId;
 
 
-  //attributes can be accessed outside class in methods
+  //can be accessed outside class in methods
   public:
-
     //methods are the functions the class uses
-
-    void displayCustomer(){
-      std::cout << name << "\n";
-      std::cout << numBeds << " beds\n";
-      std::cout << numNights << " nights\n";
-      std::cout << "Date of check in " << checkInDate << "\n";
+    void setName(std::string nameIn){
+      name = nameIn;
+    }
+    std::string getName(){
+      return name;
+    }
+    void setCheckInDate(std::string checkInDateIn){
+      checkInDate = checkInDateIn;
+    }
+    std::string getCheckInDate(){
+      return checkInDate;
+    }
+    void setNumNights(int numNightsIn){
+      numNights = numNightsIn;
+    }
+    int getNumNights (){
+      return numNights;
+    }
+    void setRoomId(int roomIdIn){
+      roomId = roomIdIn;
+    }
+    int getRoomId (){
+      return roomId;
     }
 
+
+
+
+
+    
+
     //constructor to minimize code, method that is executed to get attributes when we create new object
-    customer (std::string nameIn, int numBedsIn, int numNightsIn, std::string checkInDateIn){
+    customer (std::string nameIn, int roomIdIn, int numNightsIn, std::string checkInDateIn){
       name = nameIn;
-      numBeds = numBedsIn;
-      numNights = numNightsIn;
       checkInDate = checkInDateIn;
+      numNights = numNightsIn;
+      roomId = roomIdIn;
     }
 
 };
 
 
-std::string nameIn;
-int numBedsIn;
-int numNightsIn;
-std::string checkInDateIn;
-std::string guestId;
 
-void inputGuest(){
-  std::cout << "Input guest information\n";
-  std::cout << "Name: ";
-  getline(std::cin, nameIn);
-  std::cout << "Number of beds: ";
-  std::cin >> numBedsIn;
-  std::cout << "Number of nights: ";
-  std::cin >> numNightsIn;
-  std::cout <<  "Check in date: ";
-  std::cin >> checkInDateIn;
-  std::cout << "Guest ID: ";
-  std::cin >> guestId;
-  customer guestId = customer (nameIn,  numBedsIn, numNightsIn, checkInDateIn);
-}
 
     
