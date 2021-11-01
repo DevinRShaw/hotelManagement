@@ -2,8 +2,8 @@
 #include <string>
 #pragma once
 
-// this class represents the customer 
-class customer {
+// this class represents the room 
+class room {
 
   //cannot be accessed outside class 
   private:
@@ -11,6 +11,7 @@ class customer {
     //attributes are the variables the class uses
     int roomId;
     bool occupied;
+    std::string name;
 
 
   //can be accessed outside class in methods
@@ -26,15 +27,20 @@ class customer {
     void setOccupied(bool occupiedIn){
         occupied = occupiedIn;
     }
-
-
-
-
+    bool getOccupied (){
+        return occupied;
+    }
+    void setName(std::string nameIn){
+      name = nameIn;
+    }
+    std::string getName(){
+      return name;
+    }
 
     
 
     //constructor to minimize code, method that is executed to get attributes when we create new object
-    room (int roomIdIn, bool occupiedIn){
+    room (int roomIdIn, bool occupiedIn, std::string nameIn){
       roomId = roomIdIn;
       occupiedIn = occupied;
     }
